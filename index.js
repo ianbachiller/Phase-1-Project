@@ -2,13 +2,20 @@ document.addEventListener("DOMContentLoaded", () => {
   //Click event to show all procedures
   const showAllProceduresNamesBtn = document.getElementById("all-procedures");
   showAllProceduresNamesBtn.addEventListener("click", fetchAllProcedures);
+  let click = 0
   function fetchAllProcedures() {
-    fetch("http://localhost:3000/procedures")
-      .then((resp) => resp.json())
-      .then((procedures) => iterateProcedureNames(procedures))
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
+    click++
+    if(click % 2 === 1){
+        fetch("http://localhost:3000/procedures")
+        .then((resp) => resp.json())
+        .then((procedures) => iterateProcedureNames(procedures))
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+    }else if(click % 2 === 0){
+        proceduresContainer.innerHTML = " "
+        selectedProcedureDiv.innerHTML = " "
+    }
   }
   const proceduresContainer = document.getElementById(
     "all-procedures-container"
