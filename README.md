@@ -5,7 +5,7 @@ The Common EUHM 71ICU Procedures Reference App is a sample application that prov
 It provides two options to navigate to the procedure's information:
 1. Using the dropdown menu to show the procedure's steps, indications, and contraindications. 
 2. Clicking the "Show all procedures" button will show a list of all procedures.
-    a. After clicking the button, you, the user, have the option to double-click on a procedure, and it will show you more useful information, such as steps, indications, and contraindications of the procedure. 
+    a. After clicking the button, the user has the option to double-click on a procedure, and it will show the user more useful information, such as steps, indications, and contraindications of the procedure. 
 
 Here is a preview of how to navigate through the app:
 
