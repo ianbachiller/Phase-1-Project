@@ -17,8 +17,7 @@
         "contraindications": [
           "Known allergies to catheter materials.",
           "Urethral trauma or injury."
-        ],
-        "image": "images/straight_catheterization.jpg"
+        ]
       },
       {
         "id": 2,
@@ -37,8 +36,7 @@
         "contraindications": [
           "Known allergies to catheter materials.",
           "Urethral trauma or injury."
-        ],
-        "image": "images/foley_catheter_insertion.jpg"
+        ]
       },
       {
         "id": 3,
@@ -56,8 +54,7 @@
         "contraindications": [
           "Known allergies to system materials.",
           "Presence of active perianal infections."
-        ],
-        "image": "images/fecal_management_system.jpg"
+        ]
       },
       {
         "id": 4,
@@ -76,8 +73,7 @@
         "contraindications": [
           "Known allergies to dressing materials.",
           "Active infection at the site."
-        ],
-        "image": "images/central_line_dressing.jpg"
+        ]
       },
       {
         "id": 5,
@@ -96,8 +92,7 @@
         "contraindications": [
           "Active infection at the removal site.",
           "Significant bleeding or clotting issues."
-        ],
-        "image": "images/arterial_line_removal.jpg"
+        ]
       },
       {
         "id": 6,
@@ -116,8 +111,7 @@
         "contraindications": [
           "Known allergies to blood collection materials.",
           "Coagulopathy or bleeding disorders."
-        ],
-        "image": "images/blood_culture_venipuncture.jpg"
+        ]
       },
       {
         "id": 7,
@@ -136,8 +130,7 @@
         "contraindications": [
           "Known allergies to blood collection materials.",
           "Severe peripheral vascular disease."
-        ],
-        "image": "images/abg_sampling_arterial_line.jpg"
+        ]
       }
     ]
   }
