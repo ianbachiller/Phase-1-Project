@@ -10,7 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Error fetching data:", error);
       });
   }
-  const procCont = document.getElementById("all-procedures-container");
+  const proceduresContainer = document.getElementById(
+    "all-procedures-container"
+  );
   function iterateProcedureNames(icuProcedures) {
     selectedProcedureDiv.innerHTML = " ";
     icuProcedures.forEach((procedure) => {
@@ -18,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       p.addEventListener("dblclick", handleDoubleCLick);
       p.textContent = procedure.name;
       p.setAttribute("id", procedure.id);
-      procCont.append(p);
+      proceduresContainer.append(p);
     });
   }
   //Click event to show all procedures
@@ -32,7 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((procedureInfo) => iterateInfo(procedureInfo));
   }
   //Double-click event to show details of a procedure
-  //Iterate info function
+
+  //Iterate info function for the selected procedure
   function iterateInfo(procedureInfo) {
     selectedProcedureDiv.innerHTML = " ";
     //For steps
@@ -74,5 +77,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     selectedProcedureDiv.appendChild(olForContraindications);
   }
-  //Iterate info
+  //Iterate info function for the selected procedure
+
+  // Change event to choose a procedure
+  const dropdown = document.getElementById("dropdown-option");
+  dropdown.addEventListener("change", (event) => {
+    proceduresContainer.innerHTML = " ";
+    const pForChangeEvent = document.createElement("p");
+    pForChangeEvent.textContent = event.target.value;
+    selectedProcedureDiv.appendChild(pForChangeEvent);
+    fetch("http://localhost:3000/procedures")
+      .then((resp) => resp.json())
+      .then((procedures) => {
+        const selectedDrop = procedures.find(
+          (procedure) => procedure.name === event.target.value
+        );
+        iterateInfo(selectedDrop);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+    //Change event to choose a procedure
+  });
 });
