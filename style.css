@@ -1,0 +1,12 @@
+body {
+    background-color: lightblue;
+}
+#search-options {
+    background-color: cornsilk;
+}
+#all-procedures-container {
+    background-color: cornsilk;
+}
+#selected-procedure {
+    background-color: cornsilk;
+}

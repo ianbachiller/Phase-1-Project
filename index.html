@@ -4,31 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="style.css" type="text/css"> -->
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
     <h1> Common EUHM 71ICU Procedures Reference App</h1>
-    <div id="dropdown-menu">
-        <label for="selectProcedure">Select a Procedure:</label>
-        <select id="dropdown-option" name="procedure">
-        <option value="Straight Catheterization">Straight Catheterization</option>
-        <option value="Foley Catheter Insertion">Foley Catheter Insertion</option>
-        <option value="Fecal Management System Insertion">Fecal Management System Insertion</option>
-        <option value="Central Line Dressing Replacement">Central Line Dressing Replacement</option>
-        <option value="Removal of Arterial Line">Removal of Arterial Line</option>
-        <option value="Venipuncture for Blood Cultures">Venipuncture for Blood Cultures</option>
-        <option value="Arterial Line Blood Sample">Arterial Line Blood Sample</option>
-        </select>
+    <div id="search-options">
+        <div id="dropdown-menu">
+            <label for="selectProcedure">Select a Procedure:</label>
+            <select id="dropdown-option" name="procedure">
+            <option value="Straight Catheterization">Straight Catheterization</option>
+            <option value="Foley Catheter Insertion">Foley Catheter Insertion</option>
+            <option value="Fecal Management System Insertion">Fecal Management System Insertion</option>
+            <option value="Central Line Dressing Replacement">Central Line Dressing Replacement</option>
+            <option value="Removal of Arterial Line">Removal of Arterial Line</option>
+            <option value="Venipuncture for Blood Cultures">Venipuncture for Blood Cultures</option>
+            <option value="Arterial Line Blood Sample">Arterial Line Blood Sample</option>
+            </select>
+        </div>
+
+        <p> or </p>
+
+        <div id="click-all-procedures">
+            <button id="all-procedures">Show all procedures</button>
+            <p> Instruction: Double-click on a procedure to view more info. 😊 </p>  
+        </div>
     </div>
-
-    <p> or </p>
-
-    <div id="click-all-procedures">
-        <button id="all-procedures">Show all procedures</button>
-        <p> Instruction: Double-click on a procedure to view more info. 😊 </p>
-        <p> --------------------------------------------------------------------------------</p>
-    </div>
-
+    <p> --------------------------------------------------------------------------------</p>
     <div id="all-procedures-container">
 
     </div>
