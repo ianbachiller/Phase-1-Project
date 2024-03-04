@@ -2,19 +2,20 @@ document.addEventListener("DOMContentLoaded", () => {
   //Click event to show all procedures
   const showAllProceduresNamesBtn = document.getElementById("all-procedures");
   showAllProceduresNamesBtn.addEventListener("click", fetchAllProcedures);
-  let click = 0
+  let click = 0;
   function fetchAllProcedures() {
-    click++
-    if(click % 2 === 1){
-        fetch("http://localhost:3000/procedures")
+    click++;
+    if (click % 2 === 1) {
+      fetch("http://localhost:3000/procedures")
         .then((resp) => resp.json())
         .then((procedures) => iterateProcedureNames(procedures))
         .catch((error) => {
           console.error("Error fetching data:", error);
         });
-    }else if(click % 2 === 0){
-        proceduresContainer.innerHTML = " "
-        selectedProcedureDiv.innerHTML = " "
+    } else if (click % 2 === 0) {
+      proceduresContainer.innerHTML = " ";
+      selectedProcedureDiv.innerHTML = " ";
+      procedureTitle.textContent = " ";
     }
   }
   const proceduresContainer = document.getElementById(
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   function iterateProcedureNames(icuProcedures) {
     selectedProcedureDiv.innerHTML = " ";
+    procedureTitle.textContent = " ";
     icuProcedures.forEach((procedure) => {
       const p = document.createElement("p");
       p.addEventListener("dblclick", handleDoubleCLick);
@@ -35,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //Double-click event to show details of a procedure
   const selectedProcedureDiv = document.getElementById("selected-procedure");
   function handleDoubleCLick(event) {
+    procedureTitle.innerText = event.target.textContent;
     let pId = event.target.id;
     fetch(`http://localhost:3000/procedures/${pId}`)
       .then((resp) => resp.json())
@@ -88,11 +91,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Change event to choose a procedure
   const dropdown = document.getElementById("dropdown-option");
+  const procedureTitle = document.getElementById("procedure-title");
   dropdown.addEventListener("change", (event) => {
     proceduresContainer.innerHTML = " ";
-    const pForChangeEvent = document.createElement("p");
-    pForChangeEvent.textContent = event.target.value;
-    selectedProcedureDiv.appendChild(pForChangeEvent);
+    procedureTitle.innerText = event.target.value;
     fetch("http://localhost:3000/procedures")
       .then((resp) => resp.json())
       .then((procedures) => {
@@ -106,4 +108,21 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     //Change event to choose a procedure
   });
+
+  //Mouseover event to clear all containers
+  document.getElementById("logo").addEventListener("mouseover", () => {
+    proceduresContainer.innerHTML = " ";
+    selectedProcedureDiv.innerHTML = " ";
+    procedureTitle.textContent = " ";
+    showToast("Selection cleared!")
+  });
+  function showToast(message) {
+    const toast = document.getElementById('toast-notification');
+    toast.textContent = message;
+    toast.style.display = 'block';
+    setTimeout(() => {
+      toast.style.display = 'none';
+    }, 3000);
+  }
+  //Mouseover event to clear all containers
 });

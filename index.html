@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
   <body>
-    <h1>
-      <img class="logo" src="https://media.istockphoto.com/id/1139549801/vector/stethoscope-heart-icon.jpg?s=612x612&w=0&k=20&c=qEJ7fFxWkok8j7FYYj4NwAlHSgqsw-azZz7c3IQJ4KI=" alt="stethoscope" />
+    <h1 id="title">
+      <img id="logo" src="https://media.istockphoto.com/id/1139549801/vector/stethoscope-heart-icon.jpg?s=612x612&w=0&k=20&c=qEJ7fFxWkok8j7FYYj4NwAlHSgqsw-azZz7c3IQJ4KI=" alt="stethoscope" />
       Common EUHM 71ICU Procedures Reference App
     </h1>
     <div id="search-options">
@@ -44,7 +44,9 @@
 
       <div id="click-all-procedures">
         <button id="all-procedures">Show all procedures</button>
-        <p>Instruction: Double-click on a procedure to view more info. 😊</p>
+        <p>Instructions: </p>
+        <p>a. Double-click on a procedure to view more info. 😊</p>
+        <p>b. Hover over the logo to clear selection</p>
       </div>
     </div>
     <p style="text-align: center">
@@ -54,7 +56,10 @@
     <p style="text-align: center">
       --------------------------------------------------------------------------------
     </p>
+    <h2 id="procedure-title" style="text-align: center;"> </h2>
     <div id="selected-procedure"></div>
+
+    <div id="toast-notification">Selection cleared!</div>
     <script src="index.js"></script>
   </body>
 </html>
