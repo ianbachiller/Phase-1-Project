@@ -13,5 +13,5 @@ It provides two options to navigate to the procedure's information:
 # Demo
 Here is a preview of how to navigate through the app:
 
-![alt text](https://github.com/ianbachiller/Phase-1-Project/blob/main/UserExperiencePreview.gif)
+![alt text]()
 

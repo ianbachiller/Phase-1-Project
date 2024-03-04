@@ -123,6 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       toast.style.display = 'none';
     }, 3000);
-  }
+}
   //Mouseover event to clear all containers
 });
