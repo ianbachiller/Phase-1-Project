@@ -125,4 +125,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 3000);
 }
   //Mouseover event to clear all containers
+
+//
+// Add a button in the HTML with the text “names”  - 
+//when the button is clicked, on the bottom of the page display procedures with a name length of less than 25 characters including white space. 
+//You chose how to list those that pass this test on the page for the user to see. If you want to reuse some of your code appropriately to accomplish this, you may.
+
+//Steps:
+  //Add a button element with text = names
+  //Add a click event listener to that button
+  //create a div element
+  //Callback function will:
+    //iterate through the object using filter method
+    //for each element create a p element
+    //p element text content will be the curretn value of the iterator
+    //append p element to the div
+
+document.getElementById("names-button").addEventListener("click", handleNamesButton)
+const names = document.getElementById("names")
+function handleNamesButton(){
+  fetch("http://localhost:3000/procedures")
+  .then(resp => resp.json())
+  .then(procs => filterProcs(procs))
+}
+
+//Filter procedures with names less than 25 characters
+function filterProcs(procedures){
+  const filteredProcs = procedures.filter(procedure => procedure.name.length < 25)
+    filteredProcs.forEach(filteredProc => {
+      const p = document.createElement('p')
+      p.textContent = filteredProc.name
+      names.append(p)
+    })
+}
+//Filter procedures with names less than 25 characters
 });
